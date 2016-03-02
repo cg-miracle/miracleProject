@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YFq-3P-PzC">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <scenes>
+        <!--Navigation Controller-->
+        <scene sceneID="1Lt-i0-o0n">
+            <objects>
+                <navigationController id="YFq-3P-PzC" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o5h-aP-yB2">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.23437730137335597" green="0.57160147840962694" blue="0.90588235294117647" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="kAO-M8-jYN"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NqD-oW-COz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1328" y="296"/>
+        </scene>
+        <!--我的积分-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="T0l-EY-GHU">
+                                <rect key="frame" x="0.0" y="612" width="375" height="55"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可用积分 :890" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gcD-fD-yXf">
+                                        <rect key="frame" x="133.5" y="15" width="108.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.23437730139999999" green="0.57160147839999997" blue="0.90588235289999997" alpha="0.69270833333333337" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="Eav-gW-RFa"/>
+                                    <constraint firstItem="gcD-fD-yXf" firstAttribute="centerX" secondItem="T0l-EY-GHU" secondAttribute="centerX" id="IeU-zO-ysr"/>
+                                    <constraint firstItem="gcD-fD-yXf" firstAttribute="top" secondItem="T0l-EY-GHU" secondAttribute="top" constant="15" id="zwb-6f-p9O"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="IMy-Hl-EXz">
+                                <rect key="frame" x="121" y="74" width="133" height="29"/>
+                                <segments>
+                                    <segment title="积分兑换"/>
+                                    <segment title="兑换记录"/>
+                                </segments>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3ob-7z-DFq">
+                                <rect key="frame" x="0.0" y="122" width="375" height="545"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="joL-yl-MV3"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="6tX-iw-i5n"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3ob-7z-DFq" firstAttribute="top" secondItem="IMy-Hl-EXz" secondAttribute="bottom" constant="20" id="1qq-p2-qLS"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="3ob-7z-DFq" secondAttribute="bottom" id="56L-8H-Kg4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="T0l-EY-GHU" secondAttribute="trailing" id="8VJ-En-P12"/>
+                            <constraint firstAttribute="trailing" secondItem="3ob-7z-DFq" secondAttribute="trailing" id="CEU-FY-h68"/>
+                            <constraint firstAttribute="trailing" secondItem="T0l-EY-GHU" secondAttribute="trailing" id="DGc-rZ-ueA"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="T0l-EY-GHU" secondAttribute="trailing" id="EZD-0G-mQ3"/>
+                            <constraint firstItem="3ob-7z-DFq" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="G1f-to-6uX"/>
+                            <constraint firstItem="T0l-EY-GHU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Pb8-Za-R1L"/>
+                            <constraint firstItem="IMy-Hl-EXz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="10" id="X5f-kj-bVa"/>
+                            <constraint firstItem="T0l-EY-GHU" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="l4c-gl-9lk"/>
+                            <constraint firstItem="IMy-Hl-EXz" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="li2-ky-UFQ"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="T0l-EY-GHU" secondAttribute="bottom" id="z2g-8y-mpk"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="8VJ-En-P12"/>
+                                <exclude reference="EZD-0G-mQ3"/>
+                                <exclude reference="l4c-gl-9lk"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" title="我的积分" id="0yq-RZ-Avn"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="bottomView" destination="T0l-EY-GHU" id="Puc-dk-3uL"/>
+                        <outlet property="firstTableview" destination="3ob-7z-DFq" id="iVe-eu-5dF"/>
+                        <outlet property="segmentControl" destination="IMy-Hl-EXz" id="SZJ-tJ-wmR"/>
+                        <segue destination="YeV-OV-rkP" kind="show" id="1uI-EM-1KM"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-689.5" y="320.5"/>
+        </scene>
+        <!--Xiangxi View Controller-->
+        <scene sceneID="G7n-C3-9to">
+            <objects>
+                <viewController id="YeV-OV-rkP" customClass="CGXiangxiViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FEq-Pa-Wym"/>
+                        <viewControllerLayoutGuide type="bottom" id="RjH-wO-XTG"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="if9-TP-NsY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PcH-za-iKe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-248.5" y="274.5"/>
+        </scene>
+    </scenes>
+</document>
